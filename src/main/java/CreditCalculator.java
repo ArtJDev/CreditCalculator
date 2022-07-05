@@ -1,17 +1,13 @@
 public class CreditCalculator {
-    private double pay;
-    private double percentPay;
-    private double fullCreditCost;
-
     public double payment(int amount, int period, double percent) {
-        return pay;
+        return (amount * (percent/100) * period + amount) / (period * 12);
     }
 
     public double percentAmount(int amount, int period, double percent) {
-        return percentPay;
+        return (amount * ((100 + percent)/100) * period) - (amount * period);
     }
 
     public double fullPay(int amount, int period, double percent) {
-        return fullCreditCost;
+        return amount * ((percent)/100) * period + amount;
     }
 }

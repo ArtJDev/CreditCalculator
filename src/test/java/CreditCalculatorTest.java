@@ -8,7 +8,7 @@ import java.time.format.DateTimeFormatter;
 public class CreditCalculatorTest {
     private static String time = LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd.MM.yyyy, HH:mm:ss"));
     private int amount = 1000;
-    private int period = 1;
+    private int period = 4;
     private double percent = 5.0;
     CreditCalculator sut = new CreditCalculator();
 
@@ -24,21 +24,21 @@ public class CreditCalculatorTest {
 
     @Test
     public void testPayment() {
-        double expected = 87.5;
+        double expected = 25.0;
         double result = sut.payment(amount, period, percent);
         assertEquals(expected, result);
     }
 
     @Test
     public void testPercentAmount() {
-        double expected = 50.0;
+        double expected = 200.0;
         double result = sut.percentAmount(amount, period, percent);
         assertEquals(expected, result);
     }
 
     @Test
     public void testFullPay() {
-        double expected = 1050.0;
+        double expected = 1200.0;
         double result = sut.fullPay(amount, period, percent);
         assertEquals(expected, result);
     }
